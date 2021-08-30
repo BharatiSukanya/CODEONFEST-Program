@@ -28,7 +28,7 @@ An efficient solution is to do following steps.
 
 Solution :
 
-public static int updateBits(int n, int m, int i, int j) {
+int updateBits(int n, int m, int i, int j) {
   
 int max = ~0; /* All 1’s */
  
