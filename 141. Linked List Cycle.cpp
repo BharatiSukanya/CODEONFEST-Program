@@ -28,7 +28,7 @@ Concept : using two pointer technique
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        if(head==NULL || head->next==NULL)
+        if(head==NULL || head->next==NULL) // if ll has only one node or no node 
             return false;
         
         ListNode *slow = head;
