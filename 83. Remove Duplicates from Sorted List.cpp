@@ -17,21 +17,17 @@ Space Complexity - O(1)
   
 class Solution {
 public:
-    ListNode* reverseList(ListNode* head) {
-        vector<int>res;
-        ListNode* temp = head;
-        while(temp)
-        {
-            res.push_back(temp->val);
-            temp = temp->next;
-        }
+    ListNode* deleteDuplicates(ListNode* head) {
+        if(head==NULL)
+            return NULL;
         
-        temp = head;
-        
-        for(int i=res.size()-1; i>=0;i--)
+        ListNode* curr = head;
+        while(curr->next)
         {
-            temp->val = res[i];
-            temp =temp->next;
+            if(curr->val == curr->next->val)
+                curr->next = curr->next->next;
+            else
+                curr = curr->next;
         }
         return head;
     }
