@@ -35,3 +35,6 @@ class Solution
         return ans;
     }
 };
+
+1) Sort the elements in descending order in O(n*log(n)) 
+2) Print the first k numbers of the sorted array O(k). 
