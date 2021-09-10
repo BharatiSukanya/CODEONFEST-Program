@@ -17,6 +17,7 @@ Input: nums = [5,4,-1,7,8]
 Output: 23
   
 Solution :
+Time Complexity - O(n) where n is the size of the array
 
 class Solution {
 public:
@@ -28,5 +29,24 @@ public:
             max_sum = max(sum,max_sum);
         }
         return max_sum;
+    }
+};
+
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int m1= INT_MIN;
+        int m2 = 0;
+        
+        for(int i=0;i<nums.size();i++)
+        {
+            m2 = max(nums[i],m2+nums[i]);
+            if(m2>m1)
+                m1=m2;
+            
+            if(m2<0)
+                m2=0;
+        }
+        return m1;
     }
 };
