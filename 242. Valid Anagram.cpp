@@ -38,3 +38,31 @@ public:
     }
 };
 
+
+Solution :
+1. When using linear search the time complexity becomes O(n*n) and space complexity as O(1)
+2. When using sorting , time complexity is O(nlogn) and space complexity - O(1)
+3. When using count array , time complexity is O(n) and space complexity is - O(1)
+4. XOR concept does not work with this.
+  
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        int cnt[26]={0};
+        for(int i=0;i<s.size();i++)
+        {
+            cnt[s[i]-'a']++;
+        }
+        
+        for(int i=0;i<t.size();i++)
+        {
+            cnt[t[i]-'a']--;
+        }
+        for(int i=0;i<=25;i++)
+        {
+            if(cnt[i]!=0)
+                return false;
+        }
+        return true;
+    }
+};
